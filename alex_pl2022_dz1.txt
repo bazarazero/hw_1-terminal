@@ -1,0 +1,60 @@
+1) Посмотреть где я - pwd
+2) Создать папку - mkdir foldername
+3) Зайти в папку - cd foldername
+4) Создать 3 папки - mkdir foldername1 foldername2 foldername3
+5) Зайти в любую папку - cd foldername1
+6) Создать 5 файлов (3 txt, 2 json) - touch 1.txt 2.txt 3.txt 11.json 12.json
+7) Создать 3 папки - mkdir foldername11 foldername12 foldername13
+8. Вывести список содержимого папки - ls -la
+9) + Открыть любой txt файл - vim 1.txt
+10) + написать туда что-нибудь, любой текст. - нажать i написать abrakadabra потом ESC
+11) + сохранить и выйти. - :wq
+12) Выйти из папки на уровень выше - cd ..
+13) переместить любые 2 файла, которые вы создали, в любую другую папку. -
+mv  foldername1/1.txt foldername1/11.json foldername2 
+14) скопировать любые 2 файла, которые вы создали, в любую другую папку.  -
+cp foldername/3.txt foldername/12.json foldername3
+15) Найти файл по имени - find . -name 12.json
+16) просмотреть содержимое в реальном времени (команда grep) изучите как она работает. - tail -f foldername2/1.txt
+17) вывести несколько первых строк из текстового файла -
+head -3 foldername2/1.txt (выведет 3 первые строки)
+18) вывести несколько последних строк из текстового файла -
+tail -5 foldername2/1.txt (выведет 5 последних строк)
+19) просмотреть содержимое длинного файла (команда less) изучите как она работает. - tail -5 foldername2/1.txt 
+20) вывести дату и время - date
+=========
+
+Задание *
+1) Отправить http запрос на сервер.
+http://162.55.220.72:5005/terminal-hw-request - 
+curl http://162.55.220.72:5005/terminal-hw-request
+curl http://162.55.220.72:5005/get_method?"name=Alexander&age=37"
+
+
+2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13
+Пишем в баш: nano bash_scipt.sh (создаем файл-скрипт и переходим к его редактированию)
+В созданном файле-скрипте пишем:
+#!/bin/bash
+
+echo "3. Заходим в папку foldername (при условии что она уже создана)"
+cd foldername
+echo "4. Создаем 3 папки: foldername1, foldername2, foldername3"
+mkdir foldername1 foldername2 foldername3
+echo "5. Заходим в папку foldername1"
+cd foldername1
+echo "6. Создаем 5 файлов (3 txt, 2 json): 1.txt 2.txt 3.txt 11.json 12.json"
+touch 1.txt 2.txt 3.txt 11.json 12.json
+echo "7. Создаем 3 папки: foldername11 foldername12 foldername13"
+mkdir foldername11 foldername12 foldername13
+echo "8. Выводим содержимое папки"
+ls -la
+echo "13. Перемещаем файлы 1.txt и 11.json в папку foldername12"
+mv  1.txt 11.json foldername12 
+
+Нажимаем ctrl+o далее нажимаем энтер - сохраняем файл
+Нажимаем ctrl+x - выходим с режима редактирования файла
+
+Пишем в баш: bash bash_script.sh - вызываем скрипт на исполнение
+=====================
+
+
